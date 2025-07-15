@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Workout Grid</title>
+  <title>Weekly Workout Routine</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,77 +14,64 @@
       margin: 0;
       padding: 40px;
       color: #222;
+    }
+
+    h1, .description {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .grid-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
-      gap: 0;
-      border-collapse: collapse;
-      position: relative;
-    }
-
-    .grid-wrapper::before,
-    .grid-wrapper::after {
-      content: '';
-      position: absolute;
-      pointer-events: none;
-    }
-
-    /* Horizontal dotted lines */
-    .grid-wrapper::before {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: repeating-linear-gradient(to bottom, transparent, transparent 59px, #ccc 59px, #ccc 60px);
-    }
-
-    /* Vertical dotted lines */
-    .grid-wrapper::after {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: repeating-linear-gradient(to right, transparent, transparent calc(33.33% - 1px), #ccc calc(33.33% - 1px), #ccc 33.33%);
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
     }
 
     .day-box {
+      flex: 1 1 calc(33.33% - 20px);
+      border: 2px dotted #999;
       padding: 20px;
-      margin: 0;
+      border-radius: 10px;
       background-color: #fafafa;
-      border: 2px dotted #aaa;
-      border-radius: 8px;
-      margin: 10px;
-      z-index: 1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .day-box h2 {
-      margin: 0;
       color: #005f73;
-      font-size: 1.1em;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
 
     .note {
-      font-size: 0.85em;
+      font-size: 0.9em;
+      color: #666;
       font-style: italic;
-      color: #777;
+      margin-bottom: 10px;
     }
 
     table {
       width: 100%;
-      margin-top: 10px;
       border-collapse: collapse;
+      margin-top: 10px;
     }
 
     th, td {
-      text-align: left;
-      padding: 6px;
+      padding: 8px 10px;
       border-bottom: 1px solid #ddd;
+      text-align: left;
     }
 
     th {
@@ -92,42 +79,23 @@
       color: #00796b;
     }
 
-    .heading {
-      margin-top: 60px;
-      text-align: center;
+    td {
+      color: #333;
     }
 
-    .heading h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .heading p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    @media (max-width: 900px) {
-      .grid-wrapper {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-      }
-
-      .grid-wrapper::before,
-      .grid-wrapper::after {
-        display: none;
-      }
-
+    @media (max-width: 1000px) {
       .day-box {
-        margin: 10px 0;
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="grid-wrapper">
-    <!-- Monday -->
+  <h1>Weekly Workout Routine</h1>
+  <div class="description">Stay consistent. Train smart. Recover fully.</div>
+
+  <div class="container">
     <div class="day-box">
       <h2>Monday - Push Day</h2>
       <div class="note">*warm up rotator cuff properly*</div>
@@ -142,7 +110,6 @@
       </table>
     </div>
 
-    <!-- Tuesday -->
     <div class="day-box">
       <h2>Tuesday - Pull Day</h2>
       <div class="note">*warm up rotator cuff properly*</div>
@@ -157,7 +124,6 @@
       </table>
     </div>
 
-    <!-- Wednesday -->
     <div class="day-box">
       <h2>Wednesday - Leg Day</h2>
       <div class="note">*warm up hip flexor properly*</div>
@@ -172,7 +138,6 @@
       </table>
     </div>
 
-    <!-- Thursday -->
     <div class="day-box">
       <h2>Thursday - Rest Day</h2>
       <div class="note">*warm up properly*</div>
@@ -187,7 +152,6 @@
       </table>
     </div>
 
-    <!-- Friday -->
     <div class="day-box">
       <h2>Friday - Core Day</h2>
       <div class="note">*warm up properly*</div>
@@ -202,7 +166,6 @@
       </table>
     </div>
 
-    <!-- Sunday -->
     <div class="day-box">
       <h2>Sunday - Rest Day</h2>
       <div class="note">*warm up properly*</div>
