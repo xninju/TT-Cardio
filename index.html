@@ -16,20 +16,35 @@
       color: #222;
     }
 
-    h1 {
+    h1, .description {
       text-align: center;
       color: #333;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
       margin-bottom: 40px;
+      color: #555;
     }
 
     .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 30px;
-      border-bottom: 2px dotted #ccc;
+      position: relative;
       padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+
+    .container:not(:last-of-type)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      border-bottom: 2px dotted #ccc;
     }
 
     .day-box {
@@ -39,6 +54,17 @@
       border-radius: 10px;
       background-color: #fafafa;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .day-box:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -15px;
+      width: 1px;
+      height: 100%;
+      border-right: 2px dotted #ccc;
     }
 
     .day-box h2 {
@@ -78,11 +104,16 @@
       .day-box {
         flex: 1 1 100%;
       }
+
+      .day-box:not(:last-child)::after {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Weekly Workout Routine</h1>
+  <div class="description">Stay consistent. Train smart. Recover fully.</div>
 
   <!-- Row 1 -->
   <div class="container">
