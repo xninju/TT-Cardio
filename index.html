@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Weekly Workout Routine</title>
+  <title>Workout Grid</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,80 +14,77 @@
       margin: 0;
       padding: 40px;
       color: #222;
-    }
-
-    h1, .description {
-      text-align: center;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      font-size: 1rem;
-      margin-bottom: 40px;
-      color: #555;
-    }
-
-    .container {
       display: flex;
-      justify-content: space-between;
-      gap: 0;
-      position: relative;
-      margin-bottom: 40px;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .container:not(:last-of-type)::after {
+    .grid-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 0;
+      border-collapse: collapse;
+      position: relative;
+    }
+
+    .grid-wrapper::before,
+    .grid-wrapper::after {
       content: '';
       position: absolute;
-      bottom: -20px;
+      pointer-events: none;
+    }
+
+    /* Horizontal dotted lines */
+    .grid-wrapper::before {
+      top: 0;
       left: 0;
-      height: 2px;
       width: 100%;
-      border-bottom: 2px dotted #ccc;
+      height: 100%;
+      background-image: repeating-linear-gradient(to bottom, transparent, transparent 59px, #ccc 59px, #ccc 60px);
+    }
+
+    /* Vertical dotted lines */
+    .grid-wrapper::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(to right, transparent, transparent calc(33.33% - 1px), #ccc calc(33.33% - 1px), #ccc 33.33%);
     }
 
     .day-box {
-      width: 33.33%;
       padding: 20px;
-      border: 2px dotted #999;
-      border-radius: 10px;
+      margin: 0;
       background-color: #fafafa;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      position: relative;
-    }
-
-    /* Vertical Dotted Divider Between Boxes */
-    .day-box:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -15px;
-      height: 100%;
-      border-right: 2px dotted #ccc;
+      border: 2px dotted #aaa;
+      border-radius: 8px;
+      margin: 10px;
+      z-index: 1;
     }
 
     .day-box h2 {
+      margin: 0;
       color: #005f73;
-      margin-top: 0;
+      font-size: 1.1em;
     }
 
     .note {
-      font-size: 0.9em;
-      color: #666;
+      font-size: 0.85em;
       font-style: italic;
-      margin-bottom: 10px;
+      color: #777;
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
       margin-top: 10px;
+      border-collapse: collapse;
     }
 
     th, td {
-      padding: 8px 10px;
-      border-bottom: 1px solid #ddd;
       text-align: left;
+      padding: 6px;
+      border-bottom: 1px solid #ddd;
     }
 
     th {
@@ -95,34 +92,45 @@
       color: #00796b;
     }
 
-    td {
-      color: #333;
+    .heading {
+      margin-top: 60px;
+      text-align: center;
     }
 
-    @media (max-width: 1000px) {
-      .container {
-        flex-direction: column;
+    .heading h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .heading p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .grid-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+      }
+
+      .grid-wrapper::before,
+      .grid-wrapper::after {
+        display: none;
       }
 
       .day-box {
-        width: 100%;
-      }
-
-      .day-box::after {
-        display: none;
+        margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Weekly Workout Routine</h1>
-  <div class="description">Stay consistent. Train smart. Recover fully.</div>
 
-  <!-- Row 1 -->
-  <div class="container">
+  <div class="grid-wrapper">
+    <!-- Monday -->
     <div class="day-box">
       <h2>Monday - Push Day</h2>
-      <p class="note">*warm up rotator cuff properly*</p>
+      <div class="note">*warm up rotator cuff properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Push-ups</td><td>2x12</td></tr>
@@ -134,9 +142,10 @@
       </table>
     </div>
 
+    <!-- Tuesday -->
     <div class="day-box">
       <h2>Tuesday - Pull Day</h2>
-      <p class="note">*warm up rotator cuff properly*</p>
+      <div class="note">*warm up rotator cuff properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Pull-ups</td><td>2x10</td></tr>
@@ -148,9 +157,10 @@
       </table>
     </div>
 
+    <!-- Wednesday -->
     <div class="day-box">
       <h2>Wednesday - Leg Day</h2>
-      <p class="note">*warm up hip flexor properly*</p>
+      <div class="note">*warm up hip flexor properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Squats</td><td>2x12</td></tr>
@@ -161,13 +171,11 @@
         <tr><td>Sumo squat</td><td>2x8</td></tr>
       </table>
     </div>
-  </div>
 
-  <!-- Row 2 -->
-  <div class="container">
+    <!-- Thursday -->
     <div class="day-box">
       <h2>Thursday - Rest Day</h2>
-      <p class="note">*warm up properly*</p>
+      <div class="note">*warm up properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Child pose (baalasan)</td><td>2x45sec</td></tr>
@@ -179,9 +187,10 @@
       </table>
     </div>
 
+    <!-- Friday -->
     <div class="day-box">
       <h2>Friday - Core Day</h2>
-      <p class="note">*warm up properly*</p>
+      <div class="note">*warm up properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Mountain climber</td><td>2x10</td></tr>
@@ -193,9 +202,10 @@
       </table>
     </div>
 
+    <!-- Sunday -->
     <div class="day-box">
       <h2>Sunday - Rest Day</h2>
-      <p class="note">*warm up properly*</p>
+      <div class="note">*warm up properly*</div>
       <table>
         <tr><th>Workout</th><th>Sets/Reps</th></tr>
         <tr><td>Child pose (baalasan)</td><td>2x45sec</td></tr>
@@ -207,5 +217,12 @@
       </table>
     </div>
   </div>
+
+  <!-- Heading at bottom -->
+  <div class="heading">
+    <h1>Weekly Workout Routine</h1>
+    <p>Train hard. Recover harder. Repeat.</p>
+  </div>
+
 </body>
 </html>
