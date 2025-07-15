@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Workout Routine</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+      border-bottom: 2px dotted #ccc;
+      padding-bottom: 30px;
+    }
+
+    .day-box {
+      flex: 1 1 calc(33.33% - 20px);
+      border: 2px dotted #999;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fafafa;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .day-box h2 {
+      color: #005f73;
+      margin-top: 0;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e0f7fa;
+      color: #00796b;
+    }
+
+    td {
+      color: #333;
+    }
+
+    @media (max-width: 1000px) {
+      .day-box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Weekly Workout Routine</h1>
+
+  <!-- Row 1 -->
+  <div class="container">
+    <div class="day-box">
+      <h2>Monday - Push Day</h2>
+      <p class="note">*warm up rotator cuff properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Push-ups</td><td>2x12</td></tr>
+        <tr><td>Dips</td><td>2x10</td></tr>
+        <tr><td>Incline Push-ups</td><td>2x12</td></tr>
+        <tr><td>Pike Push-ups</td><td>2x8</td></tr>
+        <tr><td>Triceps Extension</td><td>2x12</td></tr>
+        <tr><td>Triceps Dips</td><td>2x12</td></tr>
+      </table>
+    </div>
+
+    <div class="day-box">
+      <h2>Tuesday - Pull Day</h2>
+      <p class="note">*warm up rotator cuff properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Pull-ups</td><td>2x10</td></tr>
+        <tr><td>Close Grip Pull-ups</td><td>2x8</td></tr>
+        <tr><td>Chin-ups</td><td>2x8</td></tr>
+        <tr><td>Scapula Pulls</td><td>2x8</td></tr>
+        <tr><td>Archer Pull-ups</td><td>2x10</td></tr>
+        <tr><td>Wide arm pull-ups</td><td>2x8</td></tr>
+      </table>
+    </div>
+
+    <div class="day-box">
+      <h2>Wednesday - Leg Day</h2>
+      <p class="note">*warm up hip flexor properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Squats</td><td>2x12</td></tr>
+        <tr><td>Lunges</td><td>2x10</td></tr>
+        <tr><td>Bulgarian split squat</td><td>2x8</td></tr>
+        <tr><td>Jump squat</td><td>2x10</td></tr>
+        <tr><td>Side lunge</td><td>2x10</td></tr>
+        <tr><td>Sumo squat</td><td>2x8</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="container">
+    <div class="day-box">
+      <h2>Thursday - Rest Day</h2>
+      <p class="note">*warm up properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Child pose (baalasan)</td><td>2x45sec</td></tr>
+        <tr><td>Setu-bandh asan</td><td>2x45sec</td></tr>
+        <tr><td>Uttanasana</td><td>2x45sec</td></tr>
+        <tr><td>Cobra Stretch</td><td>2x12</td></tr>
+        <tr><td>Chakrasana</td><td>2x45sec</td></tr>
+        <tr><td>Shavasana</td><td>45sec</td></tr>
+      </table>
+    </div>
+
+    <div class="day-box">
+      <h2>Friday - Core Day</h2>
+      <p class="note">*warm up properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Mountain climber</td><td>2x10</td></tr>
+        <tr><td>Plank</td><td>2x45sec</td></tr>
+        <tr><td>Russian twist</td><td>2x12</td></tr>
+        <tr><td>Crunches</td><td>2x12</td></tr>
+        <tr><td>Flutter kicks</td><td>2x10</td></tr>
+        <tr><td>Leg raises</td><td>2x8</td></tr>
+      </table>
+    </div>
+
+    <div class="day-box">
+      <h2>Saturday - Active Recovery</h2>
+      <p class="note">*do light movement, walk or mobility drills*</p>
+      <table>
+        <tr><th>Workout</th><th>Duration</th></tr>
+        <tr><td>Light walk</td><td>15-20 min</td></tr>
+        <tr><td>Dynamic stretches</td><td>10 min</td></tr>
+        <tr><td>Foam rolling</td><td>Optional</td></tr>
+        <tr><td>Yoga flow</td><td>15 min</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="container">
+    <div class="day-box">
+      <h2>Sunday - Rest Day</h2>
+      <p class="note">*warm up properly*</p>
+      <table>
+        <tr><th>Workout</th><th>Sets/Reps</th></tr>
+        <tr><td>Child pose (baalasan)</td><td>2x45sec</td></tr>
+        <tr><td>Setu-bandh asan</td><td>2x45sec</td></tr>
+        <tr><td>Uttanasana</td><td>2x45sec</td></tr>
+        <tr><td>Cobra Stretch</td><td>2x12</td></tr>
+        <tr><td>Chakrasana</td><td>2x45sec</td></tr>
+        <tr><td>Shavasana</td><td>45sec</td></tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
